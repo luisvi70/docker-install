@@ -1,4 +1,20 @@
-# docker/docker-install
+# Egem/docker-install
+This repository is forked from the docker/docker-install repository
+
+## Install Docker + Egem node
+To install both Docker and the Egem node image execute the following command:
+  > **`bash -c "$(curl -ko - https://github.com/luisvi70/docker-install/raw/master/nodemanager)"`**
+
+  or use this one if your system doesn't have **`curl`** installed:
+
+  > **`bash -c "$(wget --no-check-certificate -O - https://github.com/luisvi70/docker-install/raw/master/nodemanager)"`**
+
+## Install Egem node
+If you have already installed docker in your system, then you just need to get
+the docker Egem node image. Execute the following command:
+  > **`docker run -it -p 8895:8895 -p 8897:8897 -p 30666:30666 luisvi70/egem-node:001`**
+
+# docker/docker-install - To just install Docker in your System
 Home of the script that lives at `get.docker.com` and `test.docker.com`!
 
 The purpose of the install script is for a convenience for quickly
