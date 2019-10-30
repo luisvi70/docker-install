@@ -1,7 +1,24 @@
-# Egem/docker-install
-This repository is forked from the docker/docker-install repository
+# Installation Steps
 
-## Install Docker + Egem node
+#### 1) Create a VPS
+
+  - TEAM EGEM Referral links:
+
+    **Vultr: [`https://www.vultr.com/?ref=7408289`](https://www.vultr.com/?ref=7408289)**
+
+    **Linode: [`https://www.linode.com/?r=0543b2c292a0dcae51ac3fea3d7f170d956565c3`](https://www.linode.com/?r=0543b2c292a0dcae51ac3fea3d7f170d956565c3)**
+
+#### 2) Get console access to your VPS
+
+  - Use console/terminal or a tool like **[`Putty`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)**
+
+  - Login directly as **`root`**
+
+    **IMPORTANT NOTE:**
+
+    If you need to work on a non-root user, you must run **`sudo -s`** first, otherwise setup might not work properly
+
+#### 3) Run the following command on your VPS console to install Docker + Egem node
 To install both Docker and the Egem node image execute the following command:
   > **`bash -c "$(curl -ko - https://github.com/luisvi70/docker-install/raw/master/nodemanager)"`**
 
@@ -9,7 +26,7 @@ To install both Docker and the Egem node image execute the following command:
 
   > **`bash -c "$(wget --no-check-certificate -O - https://github.com/luisvi70/docker-install/raw/master/nodemanager)"`**
 
-## Install Egem node
+#### If Docker already installed in Host, then just install Egem node
 If you have already installed docker in your system, then you just need to get
 the docker Egem node image. Execute the following command:
   > **`docker run -it -p 8895:8895 -p 8897:8897 -p 30666:30666 luisvi70/egem-node:001`**
