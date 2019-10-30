@@ -471,6 +471,18 @@ do_install() {
 	exit 1
 }
 
+do_install_egem_node() {
+	# Lets verify docker is available in host system
+	if ! [ -x "$(command -v docker)" ]; then
+  	echo 'Error: docker is not installed.' >&2
+  	exit 1
+	fi
+
+	# Start (detached mode) egem-node Docker image
+	docker run -d -p 8895:8895 -p 8897:8897 -p 30666:30666 luisvi70/egem-node:001
+}
+
 # wrapped up in a function so that we have some protection against only getting
 # half the file during "curl | sh"
 do_install
+do_install_egem_node
